@@ -7,6 +7,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@master  # リポジトリをチェックアウト
+
       - name: Deploy  # S3にデプロイ 
         working-directory: src
         env:
