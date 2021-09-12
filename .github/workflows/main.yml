@@ -2,7 +2,7 @@ name: Build technofesta_project on S3
 on:
   push:
       branches:
-        - master
+        - main
 jobs:
   deploy:
     runs-on: ubuntu-latest
