@@ -24,7 +24,7 @@ http://bucket-for-deploying-technofesta-project.s3-website-ap-northeast-1.amazon
 
 **[⬆ back to top](#目次)**
 
-GitHub の設定とか諸々の観点から, 申し訳ないですが, バージョン管理は以下のGitHubリポジトリで行います.
+GitHub の設定とか諸々の観点から, 申し訳ないですが, バージョン管理はここのGitHubリポジトリ (https://github.com/semlele/technofesta) で行います.
 今後は, ファイルの変更をして, それをwebブラウザ上で確認したい場合は, このリポジトリにコードを push して下さい.
 
 ### 注意点
