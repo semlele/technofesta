@@ -24,14 +24,19 @@ http://bucket-for-deploying-technofesta-project.s3-website-ap-northeast-1.amazon
 
 **[⬆ back to top](#目次)**
 
-GitHubの設定とか諸々の観点から, 申し訳ないですが, バージョン管理は以下のGitHubリポジトリで行います.
-今後は, ファイルの変更をして, それをwebブラウザ上で確認したい場合は, このリポジトリにコードをプッシュして下さい.
+GitHub の設定とか諸々の観点から, 申し訳ないですが, バージョン管理は以下のGitHubリポジトリで行います.
+今後は, ファイルの変更をして, それをwebブラウザ上で確認したい場合は, このリポジトリにコードを push して下さい.
 
 ### 注意点
 
 **[⬆ back to top](#目次)**
 
-ファイルの中身自体は変えてないですが, AWS側の都合でディレクトリ構造を変更しています. (srcフォルダ内ファイルを編集するようにして下さい. )
-そのためリポジトリに変更を加える場合は, まず自分のPCにリポジトリを丸ごとクローンしてからローカルで編集,  追加をした後,  pushすることを勧めます.
+ファイルの中身自体は変えてないですが, AWS側の都合でディレクトリ構造を変更しています. (src フォルダ内ファイルを編集するようにして下さい. )
+そのためリポジトリに変更を加える場合は, まず自分のPCにリポジトリを丸ごとクローンしてからローカルで編集,  追加をした後, push することを勧めます.
 
 ## 参照
+GitHub ActionsでウェブサイトをAmazon S3にデプロイする - DeveloperIO 
+https://dev.classmethod.jp/articles/deploy-web-site-with-github-actions/
+
+このリポジトリをアップロードしている S3 バケット.
+https://s3.console.aws.amazon.com/s3/buckets/bucket-for-deploying-technofesta-project?region=ap-northeast-1&tab=objects
