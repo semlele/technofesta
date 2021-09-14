@@ -24,14 +24,14 @@ http://bucket-for-deploying-technofesta-project.s3-website-ap-northeast-1.amazon
 **[⬆ back to top](#目次)**
 
 GitHub の設定とか諸々の観点から, 申し訳ないですが, バージョン管理はここのGitHubリポジトリ (https://github.com/semlele/technofesta) で行います.
-今後は, ファイルの変更をして, それをwebブラウザ上で確認したい場合は, このリポジトリにコードを push して下さい.
+今後は, ファイルの変更をして, それをwebブラウザ上で確認したい場合は, このリポジトリに pull request して下さい.
 
 ### 注意点
 
 **[⬆ back to top](#目次)**
 
 ファイルの中身自体は変えてないですが, AWS側の都合でディレクトリ構造を変更しています. (src フォルダ内ファイルを編集するようにして下さい. )
-そのためリポジトリに変更を加える場合は, まず自分のPCにリポジトリを丸ごとクローンしてからローカルで編集,  追加をした後, push することを勧めます.
+
 
 ## 参照
 GitHub ActionsでウェブサイトをAmazon S3にデプロイする - DeveloperIO 
