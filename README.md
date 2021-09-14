@@ -38,7 +38,7 @@ GitHub ActionsでウェブサイトをAmazon S3にデプロイする - Developer
 
 https://dev.classmethod.jp/articles/deploy-web-site-with-github-actions/
 
-GitHub で他の人の Repository に参加する方法
+GitHub で他の人の Repository に参加する方法. 
 GitHub 上の他の人の Repository のソースを修正して、修正の取り込み依頼(PULL リクエスト) を送るまでの流れ
 
 https://www.engineer-memo.net/20200314-5576
