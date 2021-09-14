@@ -34,7 +34,7 @@ GitHub の設定とか諸々の観点から, 申し訳ないですが, バージ
 
 
 ## 参照
-GitHub ActionsでウェブサイトをAmazon S3にデプロイする - DeveloperIO 
+GitHub ActionsでウェブサイトをAmazon S3にデプロイする - DevelopersIO 
 
 https://dev.classmethod.jp/articles/deploy-web-site-with-github-actions/
 
