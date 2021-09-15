@@ -15,7 +15,7 @@
 **[⬆ back to top](#目次)**
 
 以下のページから, 吉井くんが作成したファイル (2021/9/14 時点 https://github.com/maasuke/techno-festa-yylab) を閲覧可能です.
-(ドメイン名については, AWSの route53, CloudFront等を使って後に変えます. )
+(ドメイン名については, AWSの route53を使って後に変えます. )
 
 http://bucket-for-deploying-technofesta-project.s3-website-ap-northeast-1.amazonaws.com
 
