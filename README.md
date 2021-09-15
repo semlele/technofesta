@@ -15,9 +15,13 @@
 **[⬆ back to top](#目次)**
 
 以下のページから, 吉井くんが作成したファイル (2021/9/14 時点 https://github.com/maasuke/techno-festa-yylab) を閲覧可能です.
-(ドメイン名については, AWSの route53を使って後に変えます. )
 
-http://bucket-for-deploying-technofesta-project.s3-website-ap-northeast-1.amazonaws.com
+ドメイン名については, AWSの route53を用いて独自ドメイン取得, 設定を行なっています. 
+
+AWS Certificate Manager を使ってSSL証明書を発行し, httpsで公開しています. 
+
+
+https://yy-techno-festa.net
 
 ### バージョン管理について
 
@@ -32,11 +36,17 @@ GitHub の設定とか諸々の観点から, 申し訳ないですが, バージ
 
 ファイルの中身自体は変えてないですが, AWS側の都合でディレクトリ構造を変更しています. (src フォルダ内ファイルを編集するようにして下さい. )
 
+Landing Page は "toppage.html" のままで変更しないで下さい. 
+
 
 ## 参照
 GitHub ActionsでウェブサイトをAmazon S3にデプロイする - DevelopersIO 
 
 https://dev.classmethod.jp/articles/deploy-web-site-with-github-actions/
+
+【AWS】S3+CloudFront+Route53+ACMでSSL化(https)した静的Webサイトを公開する - Zenn
+
+https://zenn.dev/wakkunn/articles/66a6e8372611dc
 
 GitHub で他の人の Repository に参加する方法. 
 GitHub 上の他の人の Repository のソースを修正して, 修正の取り込み依頼(PULL リクエスト) を送るまでの流れ.
