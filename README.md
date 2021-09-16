@@ -12,7 +12,7 @@
 
 ### ウェブサイトエンドポイント
 
-**[⬆ back to top](#目次)**
+**[⬆ 目次](#目次)**
 
 以下のページから, 吉井くんが作成したファイル (2021/9/14 時点 https://github.com/maasuke/techno-festa-yylab) を閲覧可能です.
 
@@ -25,18 +25,18 @@ https://yy-techno-festa.net
 
 ### バージョン管理について
 
-**[⬆ back to top](#目次)**
+**[⬆ 目次](#目次)**
 
 GitHub の設定とか諸々の観点から, 申し訳ないですが, バージョン管理はここのGitHubリポジトリ (https://github.com/semlele/technofesta) で行います.
 今後は, ファイルの変更をして, それをwebブラウザ上で確認したい場合は, このリポジトリに pull request して下さい.
 
 ### 注意点
 
-**[⬆ back to top](#目次)**
+**[⬆ 目次](#目次)**
 
 ファイルの中身自体は変えてないですが, AWS側の都合でディレクトリ構造を変更しています. (src フォルダ内ファイルを編集するようにして下さい. )
 
-Landing Page は "toppage.html" のままで変更しないで下さい. 
+Landing Page の名前は "toppage.html" のままで変更しないで下さい. 
 
 
 ## 参照
@@ -55,4 +55,4 @@ https://www.engineer-memo.net/20200314-5576
 
 このリポジトリをアップロードしている S3 バケット
 
-https://s3.console.aws.amazon.com/s3/buckets/bucket-for-deploying-technofesta-project?region=ap-northeast-1&tab=objects
+https://s3.console.aws.amazon.com/s3/buckets/yy-techno-festa.net?region=ap-northeast-1&tab=objects
