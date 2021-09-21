@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
+<title>ピクトグラム当てクイズ</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" href="style.css" type="text/css" media="screen">
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<script src="js/css3-mediaqueries.js"></script>
+<![endif]-->
+<script src="js/jquery1.7.2.min.js"></script>
+<script src="js/script.js"></script>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <header id="header">
+			<h1>静岡大学テクノフェスタ2021</h1>
+      	<!-- ロゴ -->
+		<div class="logo">
+			<a href="index.html"><p>山本研究室<span>Laboratory for Core Techniques in Big Data Processing</span></p></a>
+		</div>
+		<!-- / ロゴ -->
+	</header>
+
+	<!-- メインナビゲーション -->
+    <nav id="mainNav">
+  	<a class="menu" id="menu"><span>MENU</span></a>
+		<div class="panel">   
+    	<ul>
+    		<li><a href="index.html"><strong>トップページ</strong><span>Top</span></a></li>
+            <li class="active"><a href="pictogram_top.html"><strong>ピクトグラム当てクイズ</strong><span>Pictogram Quiz</span></a></li>
+            <li><a href="reinforce_top.html"><strong>強化学習紹介</strong><span>Reinforce Learning</span></a></li>
+            <li><a href="lab.html"><strong>研究室紹介</strong><span>about us</span></a></li>
+		</ul>   
+    </div>
+    </nav>
+    <!-- / メインナビゲーション -->
+  
+    <h1>第1問</h1>
+    <p>このピクトグラムは何を表している？</p>
+    <img src="images/yoshii3.png" alt="">
+	<input type="text" id="userAns" name="userAns">
+    
+
+	<input type="button" value="ヒントを見る" onclick="displayHint()">
+	<p id="hint">ヒントをみるを押した場合のみここにヒントを表示する</p>
+	<script>
+		document.getElementById("hint").style.display = "none";
+
+		function displayHint(){
+			const hint = document.getElementById("hint");
+
+			if(hint.style.display != "block"){
+				hint.style.display = "block";
+			}
+		}
+	</script>
+
+	<input type="button" value="答えを見る" onclick="displayAnswer()">
+	<p id="correct">見事正解！！その調子！！</p>
+	<p id='incorrect'>残念不正解！！次頑張ろう！！</p>
+	<div id="answer">
+		<p>正解は... 最後の晩餐でした！！</p>
+		<img src="images/yoshii3.jpeg" alt="">
+		<a href="pictogram_result.html">結果を見る</a>
+	</div>
+    <script>
+		document.getElementById("answer").style.display = "none";
+		document.getElementById("correct").style.display = "none";
+		document.getElementById("incorrect").style.display = "none";
+        
+
+		function displayAnswer(){
+			const answer = document.getElementById("answer");
+			const correctDoc = document.getElementById("correct");
+			const incorrectDoc = document.getElementById("incorrect");
+            const userAns = document.getElementById("userAns");
+            let correctAns = "最後の晩餐"
+
+			if(userAns.value === correctAns){
+				correctDoc.style.display = "block";
+				incorrectDoc.style.display = "none";
+			} else {
+				incorrectDoc.style.display = "block";
+				correctDoc.style.display = "none";
+			}
+
+			if(answer.style.display != "block"){
+				answer.style.display = "block";
+			}
+		}
+	</script>
+    
+
+   
+
+	<!-- フッター -->
+	<footer id="footer">
+		<!-- 左側 -->
+		<div id="info" class="grid">
+			<!-- ロゴ -->
+			<div class="logo">
+				<a href="index.html"><img src="images/logo.png" width="45" height="45" alt="Sample site"><p>Company Name<br><span>Your Company Slogan</span></p></a>
+			</div>
+			<!-- / ロゴ -->
+			<!-- 電話番号+受付時間 -->
+			<div class="info">
+				<p class="tel"><span>電話:</span> 012-3456-7890</p>
+				<p class="open">受付時間: 平日 AM 10:00 〜 PM 5:00</p>
+			</div>
+			<!-- / 電話番号+受付時間 -->
+		</div>  
+		<!-- / 左側 -->
+	</footer>
+	<!-- / フッター -->
+	<address>Copyright(c) 2013 Sample Inc. All Rights Reserved. Design by <a href="http://f-tpl.com" target="_blank" rel="nofollow">http://f-tpl.com</a></address>
+</div>
+
+</body>
+</html>

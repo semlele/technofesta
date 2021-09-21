@@ -1,0 +1,33 @@
+h1{
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+}
+
+h2{
+    font-size: 20px;
+    padding: 5px;
+}
+
+.example{
+    font-size: 20px;
+    text-align: center;
+    padding: 10px 0 20px 0;
+}
+
+.ex_pict{
+    float: left;
+    width: 250px;
+    margin: 0 100px;
+}
+
+.ex_correct{
+    width: 250px;
+    margin: 0 100px;
+}
+
+.start{
+    clear: left;
+    text-align: center;
+    margin: 30px;
+}
