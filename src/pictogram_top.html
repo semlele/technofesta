@@ -6,6 +6,7 @@
 <title>ピクトグラム当てクイズ</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
+
 <link rel="stylesheet" href="style.css" type="text/css" media="screen">
 <link rel="stylesheet" href="pictogram_top.css" type="text/css" media="screen">
 <!--[if lt IE 9]>
@@ -43,17 +44,22 @@
     </nav>
     <!-- / メインナビゲーション -->
   
-    <h1>ピクトグラム当てクイズ</h1>
-    <h2>ルール説明</h2>
-    <p>ピクトグラムが何を表しているか当ててください的なことを書く<br>
-    全部で10問(1問10点)<br>
-    ヒントをみると5点になる<br>
-    何点取れるかな？</p>
-    <p class="example">例</p>
-	<img src="images/golf.png" alt="" class="ex_pict">
-    <img src="images/golf.jpg" alt="" class="ex_correct">
-    <a href="pictogram_q1.html" class="start">クイズスタート</a>
-
+    <h1 class="pict_title">ピクトグラム当てクイズ</h1>
+	<div class="rule">
+		<p>左の白黒画像は、右の画像を元にAIが自動でピクトグラムを作成したものです。<br>
+			これからピクトグラムのみをみて何の動作をしているかを当てるクイズに挑戦してみましょう！！</p>
+	</div>
+   
+    <p class="example">例)ゴルフ</p>
+	<ul>
+		<li><img src="images/golf.png" alt=""></li>
+		<li><img src="images/golf.jpg" alt=""></li>
+	</ul>
+	
+    <ul>
+		<li><a href="pictogram_images.html" class="link_button">画像編</a></li>
+		<li><a href="pictogram_movies.html" class="link_button">動画編</a></li>
+	</ul>
 
 	<!-- フッター -->
 	<footer id="footer">

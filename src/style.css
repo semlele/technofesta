@@ -332,7 +332,7 @@ text-align:left;
 ul.footnav{
 float:right;
 width:620px;
-padding:10px 0;
+padding:10px ;
 }
 
 ul.footnav li{
@@ -575,20 +575,6 @@ background:#333;
 	#footer .logo img{float:none;padding:0;}
 }
 
-.select{
-    list-style: none;
-    cursor: pointer;
-    width:500px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    text-align: center;
-    line-height: 40px;
-    margin: 15px auto 0;
-}
-
-.check{
-    background-color: rgba(0, 0, 255, 0.4);
-}
 
 
 /* スマートフォン 横(ランドスケープ) */
