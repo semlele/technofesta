@@ -7,6 +7,7 @@
 <meta name="keywords" content="">
 <meta name="description" content="">
 <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="reinforce_top.css" type="text/css" media="screen">
 <!--[if lt IE 9]>
 <script src="js/html5.js"></script>
 <script src="js/css3-mediaqueries.js"></script>
@@ -36,19 +37,36 @@
     		<li><a href="index.html"><strong>トップページ</strong><span>Top</span></a></li>
             <li><a href="pictogram_top.html"><strong>ピクトグラム当てクイズ</strong><span>Pictogram Quiz</span></a></li>
             <li class="active"><a href="reinforce_top.html"><strong>強化学習紹介</strong><span>Reinforce Learning</span></a></li>
-            <li><a href="lab.html"><strong>研究室紹介</strong><span>about us</span></a></li>
+            <li><a href="http://lab.inf.shizuoka.ac.jp/yamamoto/" target="_blank"><strong>研究室紹介</strong><span>about us</span></a></li>
 		</ul>   
     </div>
     </nav>
     <!-- / メインナビゲーション -->
   
-    <h1>強化学習を用いたブロック崩し</h1>
-    <h2>強化学習って？</h2>
-    <p>強化学習とは、、、、</p>
+	<div class="quiz_area">
+		<h1 class="pict_title">強化学習を使ったブロック崩し</h1>
+		<p>最近AIという言葉をよく耳にしますが、AIとは日本語にすると人工知能を意味しそのAIを実現する手法の一つとして機械学習があります。</p>
+		<p>機械学習には大きく「教師あり学習」、「教師なし学習」、「強化学習」の3つに分類されます。強化学習とは主にロボットの歩行制御システムや囲碁や将棋などの対戦プログラムに使用されます。
+			イメージとしては子供が自転車を乗れるようになるまでの過程を考えてもらうとわかりやすいかもしれません。子供が自転車に乗れるようになる際に力学法則や細かい乗り方を教えてもらうのではなく
+			実際に自分で乗ってみて何度も失敗しながらうまく乗れる方法を見つけます。強化学習はこの例のように正解がわからない中試行錯誤を繰り返して望ましい方法を学ぶ学習手法となります。</p>
+		<p>実際に強化学習で学習を行うとどのような感じになるかを、ブロック崩しゲームを用いて見ていただこうと思います。まずなにも学習していない状態ではどのような動きをするのか見ていただきます。</p>	
+
+		<video src="images/breakout_random.mp4" controls style="width: 300px;"></video>
+		<p>このゲームは、下にあるバーをうまくボールに反射させて上にあるブロックを壊していくゲームです。バーは左右に動かすことができボールを落とさないようにブロックを崩していきます。
+			上の方にあるブロックほど壊したときのスコアが大きくなるのですが、なにも学習していない状態では、バーはAIにランダムに操作され(動画内では右に寄りっぱなし)、まともにボールを反射させることさえできていません。
+			これを強化学習を用いて高得点をとれるように学習させたいと思います。おおまかには試行したときのスコアが高かったAIの操作を参考に試行をする、
+			といったことを繰り返し行います。それを繰り返し、学習させた結果が以下のようになります。
+		</p>
+		<video src="images/breakout.mp4" controls style="width: 300px;"></video>
+		<p>学習後では、ボールを上手く反射させるのはもちろんですが端の方を狙い上に上げ自分で操作しなくても勝手にブロックを崩していくような手法を学習しています。
+			このように機械がそのシチュエーションでの最適解を見つけるというのが強化学習の面白いところだと思います。
+		</p>
+		
+		<div class="buttons">
+            <a href="index.html" class="link_button">トップページ</a>
+        </div>
+	</div>
     
-    <a href="reinforce_blocks.html">強化学習を用いたブロック崩しについて詳しく見る</a>
-
-
 	<!-- フッター -->
 	<footer id="footer">
 		<!-- 左側 -->

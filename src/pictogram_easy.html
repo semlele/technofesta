@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
+<title>ピクトグラム当てクイズ</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" href="style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="pictogram_easy.css" type="text/css" media="screen">
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<script src="js/css3-mediaqueries.js"></script>
+<![endif]-->
+<script src="js/jquery1.7.2.min.js"></script>
+<script src="js/script.js"></script>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <header id="header">
+			<h1>静岡大学テクノフェスタ2021</h1>
+      	<!-- ロゴ -->
+		<div class="logo">
+			<a href="index.html"><p>山本研究室<span>Laboratory for Core Techniques in Big Data Processing</span></p></a>
+		</div>
+		<!-- / ロゴ -->
+	</header>
+
+	<!-- メインナビゲーション -->
+    <nav id="mainNav">
+  	<a class="menu" id="menu"><span>MENU</span></a>
+		<div class="panel">   
+    	<ul>
+    		<li><a href="index.html"><strong>トップページ</strong><span>Top</span></a></li>
+            <li class="active"><a href="pictogram_top.html"><strong>ピクトグラム当てクイズ</strong><span>Pictogram Quiz</span></a></li>
+            <li><a href="reinforce_top.html"><strong>強化学習紹介</strong><span>Reinforce Learning</span></a></li>
+            <li><a href="http://lab.inf.shizuoka.ac.jp/yamamoto/" target="_blank"><strong>研究室紹介</strong><span>about us</span></a></li>
+		</ul>   
+    </div>
+    </nav>
+    <!-- / メインナビゲーション -->
+
+    <div class="quiz_area">
+        <script>
+            //共通の制御
+
+            
+            //答えを表示
+            function displayAnswer(ob){
+                const answer = document.getElementById(ob);
+                const summary = document.getElementById("summary");
+                if(answer.style.display != "block"){
+                    answer.style.display = "block";
+                }
+                if(finished_question === number_of_questions){
+                    summary.style.display = "block";
+                }
+            }
+
+            var number_of_questions = 10;    //問題数
+            var number_of_corrects = 0;     //正解数
+            var finished_question = 0;      //終了問題数
+            
+        </script>
+      
+        <h1 class="pict_title">ピクトグラム当てクイズ　初級編</h1>
+        <p class="explain"><span class="Q">Q </span>次のピクトグラムは何を表しているでしょう？</p>
+    
+        <h2>第１問</h2>
+        <h3>難易度★☆☆☆☆</h3>
+    
+        <div class="qestion4choices">
+            <div class="parent">
+                <div class="child1">
+                    <img src="images/baseball.png" alt="" class="img_wide">
+                </div>
+                <div class="child2">
+                    <div id="choices">
+                        <ul>
+                            <li id="q1select1" class="select">野球</li>
+                            <li id="q1select2" class="select">サッカー</li>
+                            <li id="q1select3" class="select">バレー</li>
+                            <li id="q1select4" class="select">ホッケー</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <input type="button" value="答え" onclick="q1DisplayAnswer()" class="answerButton">
+            <p id="q1correct">正解です！！</p>
+            <p id="q1incorrect">残念！</p>
+            <div id="q1AnswerDisp">
+                <p>答えは...<span>野球</span></p>
+                <img src="images/baseball_ans.png" alt="" class="img_wide">
+            </div>
+        </div>
+        
+        
+        <script>
+            /*４択選択制御*/
+            var q1select1 = document.getElementById("q1select1");
+            var q1select2 = document.getElementById("q1select2");
+            var q1select3 = document.getElementById("q1select3");
+            var q1select4 = document.getElementById("q1select4");
+            var q1userAns = -1
+            let q1Answer = 1
+    
+            q1select1.addEventListener('click', function(){
+                q1userAns = 1;
+                q1classRemove();
+                q1select1.classList.add('check');
+            });
+            q1select2.addEventListener('click', function(){
+                q1userAns = 2;
+                q1classRemove();
+                q1select2.classList.add('check');
+            });
+            q1select3.addEventListener('click', function(){
+                q1userAns = 3;
+                q1classRemove();
+                q1select3.classList.add('check');
+            });
+            q1select4.addEventListener('click', function(){
+                q1userAns = 4;
+                q1classRemove();
+                q1select4.classList.add('check');
+            });
+    
+            function q1classRemove(){
+                q1select1.classList.remove('check');
+                q1select2.classList.remove('check');
+                q1select3.classList.remove('check');
+                q1select4.classList.remove('check');
+            }
+
+            function q1DisplayAnswer(){
+                const answer = document.getElementById('q1AnswerDisp');
+                const correctDoc = document.getElementById('q1correct');
+                const incorrectDoc = document.getElementById('q1incorrect')
+                if(answer.style.display != "block"){
+                    if(q1userAns === q1Answer){
+                        correctDoc.style.display = "block";
+                        number_of_corrects++;
+                    }else{
+                        incorrectDoc.style.display = "block";
+                    }
+                    answer.style.display = "block";
+                    finished_question++;
+                }
+                if(finished_question === number_of_questions){
+                    summary.style.display = "block";
+                }
+            }
+
+            /*答え制御*/
+            document.getElementById("q1correct").style.display = "none";
+            document.getElementById("q1incorrect").style.display = "none";
+            document.getElementById("q1AnswerDisp").style.display = "none";	
+        </script>
+    
+        <h2>第２問</h2>
+        <h3>難易度★☆☆☆☆</h3>
+    
+        <div class="qestion4choices">
+            <div class="parent">
+                <div class="child1">
+                    <img src="images/bodybuilding.png" alt="">
+                </div>
+                <div class="child2">
+                    <div id="choices">
+                        <ul>
+                            <li id="q2select1" class="select">とにかく明るい安村</li>
+                            <li id="q2select2" class="select">ボディービルダー</li>
+                            <li id="q2select3" class="select">アキラ100%</li>
+                            <li id="q2select4" class="select">陣内智則</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <input type="button" value="答え" onclick="q2DisplayAnswer()" class="answerButton">
+            <p id="q2correct">正解です！！</p>
+            <p id="q2incorrect">残念！</p>
+            <div id="q2AnswerDisp">
+                <p>答えは...<span>ボディービルダー</span></p>
+                <img src="images/bodybuilding_ans.png" alt="">
+            </div>
+        </div>
+        
+        
+        <script>
+            /*４択選択制御*/
+            var q2select1 = document.getElementById("q2select1");
+            var q2select2 = document.getElementById("q2select2");
+            var q2select3 = document.getElementById("q2select3");
+            var q2select4 = document.getElementById("q2select4");
+            var q2userAns = -1
+            let q2Answer = 2
+    
+            q2select1.addEventListener('click', function(){
+                q2userAns = 1;
+                q2classRemove();
+                q2select1.classList.add('check');
+            });
+            q2select2.addEventListener('click', function(){
+                q2userAns = 2;
+                q2classRemove();
+                q2select2.classList.add('check');
+            });
+            q2select3.addEventListener('click', function(){
+                q2userAns = 3;
+                q2classRemove();
+                q2select3.classList.add('check');
+            });
+            q2select4.addEventListener('click', function(){
+                q2userAns = 4;
+                q2classRemove();
+                q2select4.classList.add('check');
+            });
+    
+            function q2classRemove(){
+                q2select1.classList.remove('check');
+                q2select2.classList.remove('check');
+                q2select3.classList.remove('check');
+                q2select4.classList.remove('check');
+            }
+
+            function q2DisplayAnswer(){
+                const answer = document.getElementById('q2AnswerDisp');
+                const correctDoc = document.getElementById('q2correct');
+                const incorrectDoc = document.getElementById('q2incorrect')
+                if(answer.style.display != "block"){
+                    if(q2userAns === q2Answer){
+                        correctDoc.style.display = "block";
+                        number_of_corrects++;
+                    }else{
+                        incorrectDoc.style.display = "block";
+                    }
+                    answer.style.display = "block";
+                    finished_question++;
+                }
+                if(finished_question === number_of_questions){
+                    summary.style.display = "block";
+                }
+            }
+
+            /*答え制御*/
+            document.getElementById("q2correct").style.display = "none";
+            document.getElementById("q2incorrect").style.display = "none";
+            document.getElementById("q2AnswerDisp").style.display = "none";	
+        </script>
+
+        <h2>第３問</h2>
+        <h3>難易度★☆☆☆☆</h3>
+
+        <div class="qestion4choices">
+            <div class="parent">
+                <div class="child1">
+                    <img src="images/yoga.png" alt="" class="img_wide">
+                </div>
+                <div class="child2">
+                    <div id="choices">
+                        <ul>
+                            <li id="q3select1" class="select">バレエ</li>
+                            <li id="q3select2" class="select">カンフー</li>
+                            <li id="q3select3" class="select">ダンス</li>
+                            <li id="q3select4" class="select">ヨガ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <input type="button" value="答え" onclick="q3DisplayAnswer()" class="answerButton">
+            <p id="q3correct">正解です！！</p>
+            <p id="q3incorrect">残念！</p>
+            <div id="q3AnswerDisp">
+                <p>答えは...<span>ヨガ</span></p>
+                <img src="images/yoga_ans.jpg" alt="" class="img_wide">
+            </div>
+        </div>
+
+
+        <script>
+            /*４択選択制御*/
+            var q3select1 = document.getElementById("q3select1");
+            var q3select2 = document.getElementById("q3select2");
+            var q3select3 = document.getElementById("q3select3");
+            var q3select4 = document.getElementById("q3select4");
+            var q3userAns = -1
+            let q3Answer = 4
+
+            q3select1.addEventListener('click', function(){
+                q3userAns = 1;
+                q3classRemove();
+                q3select1.classList.add('check');
+            });
+            q3select2.addEventListener('click', function(){
+                q3userAns = 2;
+                q3classRemove();
+                q3select2.classList.add('check');
+            });
+            q3select3.addEventListener('click', function(){
+                q3userAns = 3;
+                q3classRemove();
+                q3select3.classList.add('check');
+            });
+            q3select4.addEventListener('click', function(){
+                q3userAns = 4;
+                q3classRemove();
+                q3select4.classList.add('check');
+            });
+
+            function q3classRemove(){
+                q3select1.classList.remove('check');
+                q3select2.classList.remove('check');
+                q3select3.classList.remove('check');
+                q3select4.classList.remove('check');
+            }
+
+            function q3DisplayAnswer(){
+                const answer = document.getElementById('q3AnswerDisp');
+                const correctDoc = document.getElementById('q3correct');
+                const incorrectDoc = document.getElementById('q3incorrect')
+                if(answer.style.display != "block"){
+                    if(q3userAns === q3Answer){
+                        correctDoc.style.display = "block";
+                        number_of_corrects++;
+                    }else{
+                        incorrectDoc.style.display = "block";
+                    }
+                    answer.style.display = "block";
+                    finished_question++;
+                }
+                if(finished_question === number_of_questions){
+                    summary.style.display = "block";
+                }
+            }
+
+            /*答え制御*/
+            document.getElementById("q3correct").style.display = "none";
+            document.getElementById("q3incorrect").style.display = "none";
+            document.getElementById("q3AnswerDisp").style.display = "none";	
+        </script>
+
+        <h2>第４問</h2>
+        <h3>難易度★☆☆☆☆</h3>
+
+        <div class="qestion4choices">
+            <div class="parent">
+                <div class="child1">
+                    <img src="images/skateboard.png" alt="" class="img_wide">
+                </div>
+                <div class="child2">
+                    <div id="choices">
+                        <ul>
+                            <li id="q4select1" class="select">バンジージャンプ</li>
+                            <li id="q4select2" class="select">ラグビー</li>
+                            <li id="q4select3" class="select">スケートボード</li>
+                            <li id="q4select4" class="select">スキー</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <input type="button" value="答え" onclick="q4DisplayAnswer()" class="answerButton">
+            <p id="q4correct">正解です！！</p>
+            <p id="q4incorrect">残念！</p>
+            <div id="q4AnswerDisp">
+                <p>答えは...<span>スケートボード</span></p>
+                <img src="images/skateboard_ans.jpg" alt="" class="img_wide">
+            </div>
+        </div>
+
+
+        <script>
+            /*４択選択制御*/
+            var q4select1 = document.getElementById("q4select1");
+            var q4select2 = document.getElementById("q4select2");
+            var q4select3 = document.getElementById("q4select3");
+            var q4select4 = document.getElementById("q4select4");
+            var q4userAns = -1
+            let q4Answer = 3
+
+            q4select1.addEventListener('click', function(){
+                q4userAns = 1;
+                q4classRemove();
+                q4select1.classList.add('check');
+            });
+            q4select2.addEventListener('click', function(){
+                q4userAns = 2;
+                q4classRemove();
+                q4select2.classList.add('check');
+            });
+            q4select3.addEventListener('click', function(){
+                q4userAns = 3;
+                q4classRemove();
+                q4select3.classList.add('check');
+            });
+            q4select4.addEventListener('click', function(){
+                q4userAns = 4;
+                q4classRemove();
+                q4select4.classList.add('check');
+            });
+
+            function q4classRemove(){
+                q4select1.classList.remove('check');
+                q4select2.classList.remove('check');
+                q4select3.classList.remove('check');
+                q4select4.classList.remove('check');
+            }
+
+            function q4DisplayAnswer(){
+                const answer = document.getElementById('q4AnswerDisp');
+                const correctDoc = document.getElementById('q4correct');
+                const incorrectDoc = document.getElementById('q4incorrect')
+                if(answer.style.display != "block"){
+                    if(q4userAns === q4Answer){
+                        correctDoc.style.display = "block";
+                        number_of_corrects++;
+                    }else{
+                        incorrectDoc.style.display = "block";
+                    }
+                    answer.style.display = "block";
+                    finished_question++;
+                }
+                if(finished_question === number_of_questions){
+                    summary.style.display = "block";
+                }
+            }
+
+            /*答え制御*/
+            document.getElementById("q4correct").style.display = "none";
+            document.getElementById("q4incorrect").style.display = "none";
+            document.getElementById("q4AnswerDisp").style.display = "none";	
+        </script>
+
+
+        <h2>第５問</h2>
+        <h3>難易度★☆☆☆☆</h3>
+
+        <div class="qestion4choices">
+            <div class="parent">
+                <div class="child1">
+                    <img src="images/rugby.png" alt="" class="img_wide">
+                </div>
+                <div class="child2">
+                    <div id="choices">
+                        <ul>
+                            <li id="q5select1" class="select">野球</li>
+                            <li id="q5select2" class="select">ラグビー</li>
+                            <li id="q5select3" class="select">サッカー</li>
+                            <li id="q5select4" class="select">バスケットボール</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <input type="button" value="答え" onclick="q5DisplayAnswer()" class="answerButton">
+            <p id="q5correct">正解です！！</p>
+            <p id="q5incorrect">残念！</p>
+            <div id="q5AnswerDisp">
+                <p>答えは...<span>ラグビー</span></p>
+                <img src="images/rugby_ans.jpg" alt="" class="img_wide">
+            </div>
+        </div>
+
+
+        <script>
+            /*４択選択制御*/
+            var q5select1 = document.getElementById("q5select1");
+            var q5select2 = document.getElementById("q5select2");
+            var q5select3 = document.getElementById("q5select3");
+            var q5select4 = document.getElementById("q5select4");
+            var q5userAns = -1
+            let q5Answer = 2
+
+            q5select1.addEventListener('click', function(){
+                q5userAns = 1;
+                q5classRemove();
+                q5select1.classList.add('check');
+            });
+            q5select2.addEventListener('click', function(){
+                q5userAns = 2;
+                q5classRemove();
+                q5select2.classList.add('check');
+            });
+            q5select3.addEventListener('click', function(){
+                q5userAns = 3;
+                q5classRemove();
+                q5select3.classList.add('check');
+            });
+            q5select4.addEventListener('click', function(){
+                q5userAns = 4;
+                q5classRemove();
+                q5select4.classList.add('check');
+            });
+
+            function q5classRemove(){
+                q5select1.classList.remove('check');
+                q5select2.classList.remove('check');
+                q5select3.classList.remove('check');
+                q5select4.classList.remove('check');
+            }
+
+            function q5DisplayAnswer(){
+                const answer = document.getElementById('q5AnswerDisp');
+                const correctDoc = document.getElementById('q5correct');
+                const incorrectDoc = document.getElementById('q5incorrect')
+                if(answer.style.display != "block"){
+                    if(q5userAns === q5Answer){
+                        correctDoc.style.display = "block";
+                        number_of_corrects++;
+                    }else{
+                        incorrectDoc.style.display = "block";
+                    }
+                    answer.style.display = "block";
+                    finished_question++;
+                }
+                if(finished_question === number_of_questions){
+                    summary.style.display = "block";
+                }
+            }
+
+            /*答え制御*/
+            document.getElementById("q5correct").style.display = "none";
+            document.getElementById("q5incorrect").style.display = "none";
+            document.getElementById("q5AnswerDisp").style.display = "none";	
+        </script>    
+
+        <h2>第６問</h2>
+        <h3>難易度★☆☆☆☆</h3>
+
+        <div class="qestion4choices">
+            <div class="parent">
+                <div class="child1">
+                    <img src="images/kasuga.png" alt="">
+                </div>
+                <div class="child2">
+                    <div id="choices">
+                        <ul>
+                            <li id="q6select1" class="select">小島よしお</li>
+                            <li id="q6select2" class="select">オードリー・春日</li>
+                            <li id="q6select3" class="select">霜降り明星・粗品</li>
+                            <li id="q6select4" class="select">EXIT・リンタロー。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <input type="button" value="答え" onclick="q6DisplayAnswer()" class="answerButton">
+            <p id="q6correct">正解です！！</p>
+            <p id="q6incorrect">残念！</p>
+            <div id="q6AnswerDisp">
+                <p>答えは...<span>オードリー・春日</span></p>
+                <img src="images/kasuga_ans.jpg" alt="">
+            </div>
+        </div>
+
+
+        <script>
+            /*４択選択制御*/
+            var q6select1 = document.getElementById("q6select1");
+            var q6select2 = document.getElementById("q6select2");
+            var q6select3 = document.getElementById("q6select3");
+            var q6select4 = document.getElementById("q6select4");
+            var q6userAns = -1
+            let q6Answer = 2
+
+            q6select1.addEventListener('click', function(){
+                q6userAns = 1;
+                q6classRemove();
+                q6select1.classList.add('check');
+            });
+            q6select2.addEventListener('click', function(){
+                q6userAns = 2;
+                q6classRemove();
+                q6select2.classList.add('check');
+            });
+            q6select3.addEventListener('click', function(){
+                q6userAns = 3;
+                q6classRemove();
+                q6select3.classList.add('check');
+            });
+            q6select4.addEventListener('click', function(){
+                q6userAns = 4;
+                q6classRemove();
+                q6select4.classList.add('check');
+            });
+
+            function q6classRemove(){
+                q6select1.classList.remove('check');
+                q6select2.classList.remove('check');
+                q6select3.classList.remove('check');
+                q6select4.classList.remove('check');
+            }
+
+            function q6DisplayAnswer(){
+                const answer = document.getElementById('q6AnswerDisp');
+                const correctDoc = document.getElementById('q6correct');
+                const incorrectDoc = document.getElementById('q6incorrect')
+                if(answer.style.display != "block"){
+                    if(q6userAns === q6Answer){
+                        correctDoc.style.display = "block";
+                        number_of_corrects++;
+                    }else{
+                        incorrectDoc.style.display = "block";
+                    }
+                    answer.style.display = "block";
+                    finished_question++;
+                }
+                if(finished_question === number_of_questions){
+                    summary.style.display = "block";
+                }
+            }
+
+            /*答え制御*/
+            document.getElementById("q6correct").style.display = "none";
+            document.getElementById("q6incorrect").style.display = "none";
+            document.getElementById("q6AnswerDisp").style.display = "none";	
+        </script>    
+
+        <h2>第７問</h2>
+        <h3>難易度★☆☆☆☆</h3>
+
+        <div class="qestion4choices">
+            <div class="parent">
+                <div class="child1">
+                    <img src="images/david.png" alt="">
+                </div>
+                <div class="child2">
+                    <div id="choices">
+                        <ul>
+                            <li id="q7select1" class="select">ダビデ像</li>
+                            <li id="q7select2" class="select">自由の女神</li>
+                            <li id="q7select3" class="select">ミロのヴィーナス</li>
+                            <li id="q7select4" class="select">西郷隆盛像</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <input type="button" value="答え" onclick="q7DisplayAnswer()" class="answerButton">
+            <p id="q7correct">正解です！！</p>
+            <p id="q7incorrect">残念！</p>
+            <div id="q7AnswerDisp">
+                <p>答えは...<span>ダビデ像</span></p>
+                <img src="images/david_ans.jpg" alt="">
+            </div>
+        </div>
+
+
+        <script>
+            /*４択選択制御*/
+            var q7select1 = document.getElementById("q7select1");
+            var q7select2 = document.getElementById("q7select2");
+            var q7select3 = document.getElementById("q7select3");
+            var q7select4 = document.getElementById("q7select4");
+            var q7userAns = -1
+            let q7Answer = 1
+
+            q7select1.addEventListener('click', function(){
+                q7userAns = 1;
+                q7classRemove();
+                q7select1.classList.add('check');
+            });
+            q7select2.addEventListener('click', function(){
+                q7userAns = 2;
+                q7classRemove();
+                q7select2.classList.add('check');
+            });
+            q7select3.addEventListener('click', function(){
+                q7userAns = 3;
+                q7classRemove();
+                q7select3.classList.add('check');
+            });
+            q7select4.addEventListener('click', function(){
+                q7userAns = 4;
+                q7classRemove();
+                q7select4.classList.add('check');
+            });
+
+            function q7classRemove(){
+                q7select1.classList.remove('check');
+                q7select2.classList.remove('check');
+                q7select3.classList.remove('check');
+                q7select4.classList.remove('check');
+            }
+
+            function q7DisplayAnswer(){
+                const answer = document.getElementById('q7AnswerDisp');
+                const correctDoc = document.getElementById('q7correct');
+                const incorrectDoc = document.getElementById('q7incorrect')
+                if(answer.style.display != "block"){
+                    if(q7userAns === q7Answer){
+                        correctDoc.style.display = "block";
+                        number_of_corrects++;
+                    }else{
+                        incorrectDoc.style.display = "block";
+                    }
+                    answer.style.display = "block";
+                    finished_question++;
+                }
+                if(finished_question === number_of_questions){
+                    summary.style.display = "block";
+                }
+            }
+
+            /*答え制御*/
+            document.getElementById("q7correct").style.display = "none";
+            document.getElementById("q7incorrect").style.display = "none";
+            document.getElementById("q7AnswerDisp").style.display = "none";	
+        </script>    
+
+        <h2>第８問</h2>
+        <h3>難易度★☆☆☆☆</h3>
+
+        <div class="qestion4choices">
+            <div class="parent">
+                <div class="child1">
+                    <img src="images/bolt.png" alt="">
+                </div>
+                <div class="child2">
+                    <div id="choices">
+                        <ul>
+                            <li id="q8select1" class="select">クリスティアーノ・ロナウド</li>
+                            <li id="q8select2" class="select">ウサイン・ボルト</li>
+                            <li id="q8select3" class="select">マイケル・ジョーダン</li>
+                            <li id="q8select4" class="select">松岡修造</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <input type="button" value="答え" onclick="q8DisplayAnswer()" class="answerButton">
+            <p id="q8correct">正解です！！</p>
+            <p id="q8incorrect">残念！</p>
+            <div id="q8AnswerDisp">
+                <p>答えは...<span>ウサイン・ボルト</span></p>
+                <img src="images/bolt_ans.jpg" alt="">
+            </div>
+        </div>
+
+
+        <script>
+            /*４択選択制御*/
+            var q8select1 = document.getElementById("q8select1");
+            var q8select2 = document.getElementById("q8select2");
+            var q8select3 = document.getElementById("q8select3");
+            var q8select4 = document.getElementById("q8select4");
+            var q8userAns = -1
+            let q8Answer = 2
+
+            q8select1.addEventListener('click', function(){
+                q8userAns = 1;
+                q8classRemove();
+                q8select1.classList.add('check');
+            });
+            q8select2.addEventListener('click', function(){
+                q8userAns = 2;
+                q8classRemove();
+                q8select2.classList.add('check');
+            });
+            q8select3.addEventListener('click', function(){
+                q8userAns = 3;
+                q8classRemove();
+                q8select3.classList.add('check');
+            });
+            q8select4.addEventListener('click', function(){
+                q8userAns = 4;
+                q8classRemove();
+                q8select4.classList.add('check');
+            });
+
+            function q8classRemove(){
+                q8select1.classList.remove('check');
+                q8select2.classList.remove('check');
+                q8select3.classList.remove('check');
+                q8select4.classList.remove('check');
+            }
+
+            function q8DisplayAnswer(){
+                const answer = document.getElementById('q8AnswerDisp');
+                const correctDoc = document.getElementById('q8correct');
+                const incorrectDoc = document.getElementById('q8incorrect')
+                if(answer.style.display != "block"){
+                    if(q8userAns === q8Answer){
+                        correctDoc.style.display = "block";
+                        number_of_corrects++;
+                    }else{
+                        incorrectDoc.style.display = "block";
+                    }
+                    answer.style.display = "block";
+                    finished_question++;
+                }
+                if(finished_question === number_of_questions){
+                    summary.style.display = "block";
+                }
+            }
+
+            /*答え制御*/
+            document.getElementById("q8correct").style.display = "none";
+            document.getElementById("q8incorrect").style.display = "none";
+            document.getElementById("q8AnswerDisp").style.display = "none";	
+        </script>    
+
+        <h2>第９問</h2>
+        <h3>難易度★☆☆☆☆</h3>
+
+        <div class="qestion4choices">
+            <div class="parent">
+                <div class="child1">
+                    <img src="images/onepiece.png" alt="" class="img_wide">
+                </div>
+                <div class="child2">
+                    <div id="choices">
+                        <ul>
+                            <li id="q9select1" class="select">鬼滅の刃</li>
+                            <li id="q9select2" class="select">銀魂</li>
+                            <li id="q9select3" class="select">東京リベンジャーズ</li>
+                            <li id="q9select4" class="select">ワンピース</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <input type="button" value="答え" onclick="q9DisplayAnswer()" class="answerButton">
+            <p id="q9correct">正解です！！</p>
+            <p id="q9incorrect">残念！</p>
+            <div id="q9AnswerDisp">
+                <p>答えは...<span>ワンピース</span></p>
+                <img src="images/onepiece_ans.png" alt="" class="img_wide">
+            </div>
+        </div>
+
+        <script>
+            /*４択選択制御*/
+            var q9select1 = document.getElementById("q9select1");
+            var q9select2 = document.getElementById("q9select2");
+            var q9select3 = document.getElementById("q9select3");
+            var q9select4 = document.getElementById("q9select4");
+            var q9userAns = -1
+            let q9Answer = 4
+
+            q9select1.addEventListener('click', function(){
+                q9userAns = 1;
+                q9classRemove();
+                q9select1.classList.add('check');
+            });
+            q9select2.addEventListener('click', function(){
+                q9userAns = 2;
+                q9classRemove();
+                q9select2.classList.add('check');
+            });
+            q9select3.addEventListener('click', function(){
+                q9userAns = 3;
+                q9classRemove();
+                q9select3.classList.add('check');
+            });
+            q9select4.addEventListener('click', function(){
+                q9userAns = 4;
+                q9classRemove();
+                q9select4.classList.add('check');
+            });
+
+            function q9classRemove(){
+                q9select1.classList.remove('check');
+                q9select2.classList.remove('check');
+                q9select3.classList.remove('check');
+                q9select4.classList.remove('check');
+            }
+
+            function q9DisplayAnswer(){
+                const answer = document.getElementById('q9AnswerDisp');
+                const correctDoc = document.getElementById('q9correct');
+                const incorrectDoc = document.getElementById('q9incorrect')
+                if(answer.style.display != "block"){
+                    if(q9userAns === q9Answer){
+                        correctDoc.style.display = "block";
+                        number_of_corrects++;
+                    }else{
+                        incorrectDoc.style.display = "block";
+                    }
+                    answer.style.display = "block";
+                    finished_question++;
+                }
+                if(finished_question === number_of_questions){
+                    summary.style.display = "block";
+                }
+            }
+
+            /*答え制御*/
+            document.getElementById("q9correct").style.display = "none";
+            document.getElementById("q9incorrect").style.display = "none";
+            document.getElementById("q9AnswerDisp").style.display = "none";	
+        </script>    
+
+        <h2>第10問</h2>
+        <h3>難易度★☆☆☆☆</h3>
+        <div id="questionInput">
+            <div class="parent">
+                <div class="child1">
+                    <video src="images/memeshikute.mov" controls class="img_wide"></video>
+                </div>
+                <div class="child2">
+                    <input type="text" id="q10userAns" name="q10userAns" placeholder="答えを入力" class="sentence">
+                    <input type="button" value="決定" onclick="checkCorrectOfIncorrect('q10userAns','q10correct','q10incorrect','q10answer','女々しくて')" class="ok">
+                    <p>曲名を入力してください</p>
+                    <p id="q10correct">正解です！！</p>
+                    <p id="q10incorrect">違います！</p>
+                </div>
+            </div>
+            <input type="button" value="答え" onclick="q10DisplayAnswer()" class="answerButton">
+            <div id="q10answer">
+                <p>答えは...<span>女々しくて</span></p>
+                <video src="images/memesikute_ans.mp4" controls class="img_wide"></video>
+            </div>
+        </div>
+    
+        <script>
+            document.getElementById("q10correct").style.display = "none";
+            document.getElementById("q10incorrect").style.display = "none";
+            document.getElementById("q10answer").style.display = "none";
+    
+            function checkCorrectOfIncorrect(ob1,ob2,ob3,ob4, correctAns){
+                const userAns = document.getElementById(ob1);
+                const correctDoc = document.getElementById(ob2);
+                const incorrectDoc = document.getElementById(ob3);
+                const ansDisp = document.getElementById(ob4);
+                if(userAns.value === correctAns && ansDisp.style.display === "none"){
+                    correctDoc.style.display = "block";
+                    incorrectDoc.style.display = "none";
+                    number_of_corrects++;
+                    q10DisplayAnswer();
+                } else if(ansDisp.style.display === "none") {
+                    incorrectDoc.style.display = "block";
+                    correctDoc.style.display = "none";
+                }
+            }
+
+            function q10DisplayAnswer(){
+                const answer = document.getElementById('q10answer');
+                if(answer.style.display != "block"){
+                    answer.style.display = "block";
+                    finished_question++;
+                }
+                if(finished_question === number_of_questions){
+                    var score = document.getElementById('score');
+                    score.innerHTML = number_of_corrects;
+                    summary.style.display = "block";
+                }
+            }
+        </script>
+        
+        <div id="summary">
+            <h2><span id="score"></span> / 10問　正解！！</h2>
+            <p>遊んでくれてありがとうございました！！</p>
+        </div>
+
+        <script>
+            document.getElementById("summary").style.display = "none";
+        </script>
+        
+        <div class="openpose_explain">
+            <h2>技術紹介</h2>
+        
+            <p>今回出題したピクトグラムは<span>OpenPose</span>という技術を使用しています。</p>
+            <h2>OpenPoseとは</h2>
+            <p class="explain">身体に特殊な装置を取り付けることなく、AI(深層学習)を用いることで撮影動画及び画像から人物の骨格点（25点）のx，y座標を取得するシステム
+            </p>
+            <img src="images/openpose_explain.png" alt="" class="openpose">
+            <img src="images/openpose_img.png" alt="" class="openpose" style="width: 500px;">
+            <p class="explain" style="font-size: 80%;">出典：Zhe Cao， Gines Hidalgo， Tomas Simon， Shih-En Wei and Yaser Sheikh: OpenPose: Realtime Multi- Person 2D Pose Estimation using Part Affinity Fields， IEEE Transactions on Pattern Analysis and Machine Intelligence， 2019 </p>
+        </div>
+        <div class="buttons">
+            <a href="pictogram_hard.html" class="link_button">上級編へ</a>
+        </div>
+    </div>
+    
+
+
+	<!-- フッター -->
+	<footer id="footer">
+		<!-- 左側 -->
+		<div id="info" class="grid">
+			<!-- ロゴ -->
+			<div class="logo">
+				<a href="index.html"><img src="images/logo.png" width="45" height="45" alt="Sample site"><p>Company Name<br><span>Your Company Slogan</span></p></a>
+			</div>
+			<!-- / ロゴ -->
+			<!-- 電話番号+受付時間 -->
+			<div class="info">
+				<p class="tel"><span>電話:</span> 012-3456-7890</p>
+				<p class="open">受付時間: 平日 AM 10:00 〜 PM 5:00</p>
+			</div>
+			<!-- / 電話番号+受付時間 -->
+		</div>  
+		<!-- / 左側 -->
+	</footer>
+	<!-- / フッター -->
+	<address>Copyright(c) 2013 Sample Inc. All Rights Reserved. Design by <a href="http://f-tpl.com" target="_blank" rel="nofollow">http://f-tpl.com</a></address>
+</div>
+
+</body>
+</html>
