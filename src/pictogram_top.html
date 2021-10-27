@@ -47,14 +47,108 @@
     <h1 class="pict_title">ピクトグラム当てクイズ</h1>
 	<div class="rule">
 		<p>左の白黒画像は、右の画像を元にAIが自動でピクトグラムを作成したものです。<br>
-			これからピクトグラムのみをみて何の動作をしているかを当てるクイズに挑戦してみましょう！！</p>
+			ピクトグラムだけを見て何の動作をしているか当てるクイズに挑戦してみよう！！</p>
 	</div>
    
-    <p class="example">例)ゴルフ</p>
-	<ul>
-		<li><img src="images/golf.png" alt=""></li>
-		<li><img src="images/golf.jpg" alt=""></li>
-	</ul>
+	<!--
+		<p class="example">例)ゴルフ</p>
+		<ul>
+			<li><img src="images/golf.png" alt=""></li>
+			<li><img src="images/golf.jpg" alt=""></li>
+		</ul>
+	-->
+    
+	<div class="quiz_area">
+		<h2>例題</h2>
+		<p class="explain"><span class="Q">Q </span>次のピクトグラムは何を表しているでしょう？ 選択肢を押すと答えが出ます。</p>
+		<div class="qestion4choices">
+			<div class="parent">
+				<div class="child1">
+					<img src="images/golf.png" alt="">
+				</div>
+				<div class="child2">
+					<div id="choices">
+						<ul>
+							<li class="select" id="select1">野球</li>
+							<li class="select" id="select2">サッカー</li>
+							<li class="select" id="select3">バレー</li>
+							<li class="select" id="select4">ゴルフ</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="answerDisp">
+				<p>答えは...<span>ゴルフ</span>です</p>
+				<img src="images/golf.jpg" alt="">
+			</div>
+		</div>
+	</div>
+	
+	<script>
+		document.getElementById("answerDisp").style.display = "none";	
+		/*４択選択制御*/
+		var select1 = document.getElementById("select1");
+		var select2 = document.getElementById("select2");
+		var select3 = document.getElementById("select3");
+		var select4 = document.getElementById("select4");
+		var userAns = -1
+		let Answer = 4
+
+		select1.addEventListener('click', function(){
+			if(userAns==-1){
+				userAns = 1;
+				select1.classList.add('check');
+				DisplayAnswer()
+				scrollAns()
+			}
+		});
+		select2.addEventListener('click', function(){
+			if(userAns==-1){
+				userAns = 2;
+				select2.classList.add('check');
+				DisplayAnswer()
+				scrollAns()
+			}
+		});
+		select3.addEventListener('click', function(){
+			if(userAns==-1){
+				userAns = 3;
+				select3.classList.add('check');
+				DisplayAnswer()
+				scrollAns()
+			}
+		});
+		select4.addEventListener('click', function(){
+			if(userAns==-1){
+				userAns = 4;
+				select4.classList.add('check');
+				DisplayAnswer()
+				scrollAns()
+			}
+		});
+		
+
+		function DisplayAnswer(){
+			const answer = document.getElementById('answerDisp');
+			if(answer.style.display != "block"){
+				answer.style.display = "block";
+			}
+		}
+
+		function scrollAns(){
+			const ansLeft = document.getElementById("answerDisp").getBoundingClientRect().left;
+			const ansTop = document.getElementById("answerDisp").getBoundingClientRect().top;
+			window.scrollTo({
+				left: ansLeft,
+				top: ansTop,
+				behavior: 'smooth'
+			});
+		}
+	</script>
+
+	<div class="rule">
+		<p>今回は難易度別に２つの問題を用意しました。ぜひどちらもチャレンジしてみてください！</p>
+	</div>
 	
 	<div class="buttons">
 		<ul>

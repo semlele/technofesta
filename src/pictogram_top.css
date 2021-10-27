@@ -1,3 +1,8 @@
+.quiz_area{
+    padding: 0 40px;
+    text-align: center;
+}
+
 h1.pict_title {
     font-size: 30px;
     text-align: center;
@@ -5,6 +10,9 @@ h1.pict_title {
     margin: 20px 200px;
   }
   
+p{
+    font-size: 17px;
+}
   
 .rule{
     text-align: center;
@@ -18,12 +26,12 @@ h1.pict_title {
     text-align: center;
 }
 
-ul{
+.buttons ul{
     display: flex;
     justify-content: center;
 }
 
-li{
+.buttons li{
     list-style: none;
 }
 
@@ -51,3 +59,62 @@ img{
 .buttons{
     margin: 20px;
 }
+
+p.explain{
+    text-indent: 1rem;
+    text-align: left;
+}
+
+span{
+    color: rgb(0, 162, 255);
+    font-size: 150%;
+}
+
+h2{
+    font-size: 30px;
+    text-align: center;
+    padding: 50px 0 0 0 ;
+}
+
+h3{
+    font-size: 15px;
+    text-align: right;
+}
+
+img{
+    width: 250px;
+    margin: 20px 40px;
+}
+
+.child2{
+    padding: 80px 0;
+}
+
+.select{
+    display: list-item;
+    list-style: none;
+    cursor: pointer;
+    width:400px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 40px;
+    margin: 15px auto 0;
+    font-size: 15px;
+}
+
+.check{
+    background-color: rgb(212, 212, 212);
+}
+
+@media (min-width: 600px) {
+    .parent {
+      display: flex;
+    }
+    .child1 {
+      flex-grow: 1;
+    }
+    .child2 {
+      flex-grow: 1;
+    }
+  }

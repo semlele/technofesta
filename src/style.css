@@ -68,6 +68,7 @@ font-weight:normal;
 *************/
 .logo{
 float:left;
+padding-left: 15px;
 }
 
 .logo p{float:left;}
@@ -113,6 +114,7 @@ font-weight:normal;
 **************************/
 #mainBanner{
 margin:17px auto;
+margin-top: 0;
 padding:0;
 width:100%;
 position:relative;
@@ -163,17 +165,29 @@ background:#fff;
 margin:0 5px;
 padding:10px;
 border:1px solid #ebebeb;
+height: 260px;
 }
 
 .box img{
 max-width:100%;
-height:auto;
+height:140px;
 border:4px solid #ebebeb;
 }
 
-.box h3{padding:10px 0 5px;}
+.box h3{
+	padding:10px 0 5px;
+	font-size: 18px;
+}
 
 .box h3, .box p{text-align:left;}
+
+.box a{
+	color: black;
+}
+
+.box a:hover{
+	color: rgb(121, 121, 121);
+}
 
 .box p.readmore{
 padding:10px 5px 5px;
