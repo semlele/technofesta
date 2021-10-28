@@ -121,6 +121,10 @@ position:relative;
 line-height:0;
 }
 
+#mainBanner p{
+	font-size: 15px;
+}
+
 #mainBanner img{
 max-width:100%;
 height:auto;
@@ -141,7 +145,7 @@ background-color: rgba(0,0,0,0.4);
 
 .slogan h2{
 padding-bottom:5px;
-font-size:20px;
+font-size:25px;
 }
 
 
@@ -170,7 +174,8 @@ height: 260px;
 
 .box img{
 max-width:100%;
-height:140px;
+width:"260";
+height:"113";
 border:4px solid #ebebeb;
 }
 
@@ -614,6 +619,10 @@ background:#333;
 	float:left;
 	margin-right:5px;
 	}
+
+	.box{
+		height: auto;
+	}
 	
 	.box h3{padding-top:0;}
 
@@ -630,6 +639,10 @@ background:#333;
 /* スマートフォン 縦(ポートレート) */
 @media only screen and (max-width:480px){
 	.grid{width:100%;}
-	.box img{max-width:100px;}
-	#mainBanner h2,#mainBanner p{font-size:80%;}
+	.box img{max-width:100px;
+				margin: 15px 0}
+	#mainBanner h2{font-size:100%;}
+	#mainBanner p{font-size:90%;}
+	.box h3{font-size: 120%;}
+	.box{height: auto;}
 }
