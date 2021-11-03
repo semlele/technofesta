@@ -10,7 +10,7 @@ h1.pict_title{
     margin: 20px 200px;
 }
 
-p{
+.quiz_area > p{
     font-size: 17px;
 }
 
@@ -112,6 +112,17 @@ input.ok{
 }
 .buttons_sm{display: none;}
 
+.special_area{
+    background-color: rgb(253, 151, 151);
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.special{
+    width: 800px;
+    max-width: 100%;
+}
+
 
 @media (min-width: 600px) {
     .parent {
@@ -139,7 +150,7 @@ input.ok{
         text-indent: 1rem;
         margin: 20px 0;
     }
-    p{
+    .quiz_area > p{
         font-size: 15px;
     }
     h2{
@@ -200,5 +211,9 @@ input.ok{
     }
     .openpose{
         max-width: 270px;
+    }
+    .special{
+        max-width: 100%;
+        margin: auto 0;
     }
 }

@@ -10,7 +10,7 @@ h1.pict_title{
     margin: 20px 200px;
 }
 
-p{
+.quiz_area > p{
     font-size: 17px;
 }
 
@@ -154,7 +154,7 @@ input.ok{
         text-indent: 1rem;
         margin: 20px 0;
     }
-    p{
+    .quiz_area > p{
         font-size: 15px;
     }
     h2{

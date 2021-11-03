@@ -10,14 +10,20 @@ h1.pict_title{
     margin: 20px 200px;
 }
 
-p{
+.quiz_area > p{
     text-indent: 1rem;
     font-size: 17px;
     text-align: left;
+    margin: 40px 0;
 }
 
-p.explain{
-    text-align: left;
+p.reference{
+    margin: 0;
+    font-size: small;
+}
+
+.rein_explain{
+    margin: 0 150px;
 }
 
 span{
@@ -37,8 +43,7 @@ h3{
 }
 
 img{
-    width: 250px;
-    margin: 20px 40px;
+    width: 500px;
 }
 
 .child2{
@@ -112,9 +117,8 @@ input.ok{
 }
 
 video{
-    margin: 40px;
+    width: 400px;
 }
-
 
 @media (min-width: 600px) {
     .parent {
@@ -127,3 +131,54 @@ video{
       flex-grow: 1;
     }
   }
+
+@media only screen and (max-width:480px){
+    .quiz_area{
+    padding: 0 10px;
+    text-align: center;
+    }
+    h1.pict_title{
+        font-size: 18px;
+        margin: 10px 30px;
+    }
+    .rule{
+        text-align: left;
+        text-indent: 1rem;
+        margin: 20px 0;
+    }
+    .quiz_area > p{
+        font-size: 15px;
+    }
+    h2{
+        font-size: 20px;
+        text-align: center;
+        padding: 30px 0 0 0;
+    }
+    img{
+        max-width: 100%;
+    }
+    input {margin: 10px;}
+    
+    .link_button{
+        font-size: 20px;
+        color: white;
+        background-color: rgb(0, 162, 255);
+        padding: 10px 30px;
+        border-radius: 10px;
+    }
+    .pc{
+        display: none !important;
+    }
+    .sm{display: block !important;
+        width: 270px;
+    }
+    .openpose{
+        max-width: 270px;
+    }
+    .rein_explain{
+        margin: 0 10px;
+    }
+    video{
+        max-width: 100%;
+    }
+}
