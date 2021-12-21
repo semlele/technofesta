@@ -1,4 +1,4 @@
-# yy-lab テクノフェスタ　PJ (README 2021/11/4 updated)
+# yy-lab テクノフェスタ PJ (README 2021/11/4 updated)
 ## これは, 2021年度静岡大学テクノフェスタにて展示予定のwebページです. 
 ## このリポジトリはGitHub Actions を用いて, コードを push する都度 S3 にアップロードされるようになってます. 
 
